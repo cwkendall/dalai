@@ -209,6 +209,8 @@ class Dalai {
         }
       } catch (e) {
         console.log("require log", e)
+      } finally {
+        return;
       }
     }
 
