@@ -362,7 +362,7 @@ class Dalai {
       let modelFolders = []
       try {
         modelFolders = (await fs.promises.readdir(modelsPath, { withFileTypes: true }))
-          .filter(dirent => dirent.isDirectory())
+          .filter(dirent => (dirent.isDirectory() || dirent.isSymbolicLink()))
           .map(dirent => dirent.name)
       } catch (e) {
       }
